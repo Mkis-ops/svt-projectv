@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpmutk6fae5c5"]
+
+[ext_resource type="Script" path="res://scripts/boutton_commencer.gd" id="1_qn8p2"]
+[ext_resource type="Texture2D" uid="uid://br4uxpttp6wkw" path="res://assets/Capture_d_écran_2025-02-24_204433-removebg-preview.png" id="1_vksab"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p6ei6"]
+
+[node name="Boutton Commencer" type="Node2D"]
+script = ExtResource("1_qn8p2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(229, 178)
+scale = Vector2(0.482487, 0.408467)
+texture = ExtResource("1_vksab")
+
+[node name="Button" type="Button" parent="Sprite2D"]
+offset_left = -203.0
+offset_top = -179.0
+offset_right = 211.0
+offset_bottom = 225.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p6ei6")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_p6ei6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_p6ei6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_p6ei6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_p6ei6")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_p6ei6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_p6ei6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_p6ei6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p6ei6")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_p6ei6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p6ei6")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="simulation_commencer" from="." to="." method="_on_simulation_commencer"]
+[connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]

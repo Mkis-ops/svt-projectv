@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://eks32m670n4j"]
+
+[ext_resource type="Texture2D" uid="uid://dm5yp6osfaerj" path="res://assets/Capture_d_écran_2025-02-24_142244-removebg-preview.png" id="1_guisy"]
+[ext_resource type="Script" path="res://scripts/button.gd" id="1_mn1a3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flq4e"]
+
+[node name="Lampe" type="Node2D"]
+scale = Vector2(2.58, 2.58)
+script = ExtResource("1_mn1a3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 3.10078
+offset_top = 86.0465
+offset_right = 301.101
+offset_bottom = 340.047
+texture = ExtResource("1_guisy")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 60.8527
+offset_top = 11.6279
+offset_right = 325.852
+offset_bottom = 126.628
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+text = "Lampe éteinte"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 13.0
+offset_top = 109.0
+offset_right = 317.0
+offset_bottom = 362.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flq4e")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_flq4e")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_flq4e")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_flq4e")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_flq4e")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_flq4e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_flq4e")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_flq4e")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flq4e")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_flq4e")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flq4e")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

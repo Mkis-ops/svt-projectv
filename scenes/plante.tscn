@@ -1,0 +1,117 @@
+[gd_scene load_steps=12 format=3 uid="uid://cwp27jx3nx1d0"]
+
+[ext_resource type="Texture2D" uid="uid://cadju5tjxsr3g" path="res://assets/plante/pla-removebg-preview.png" id="1_uwhvm"]
+[ext_resource type="Script" path="res://scenes/plante.gd" id="1_xec2y"]
+[ext_resource type="Texture2D" uid="uid://cb6y0nl72eg8b" path="res://assets/plante/plantestate2-removebg-preview.png" id="2_1k0g2"]
+[ext_resource type="Texture2D" uid="uid://blmewwoddor82" path="res://assets/plante/plantestate1-removebg-preview.png" id="3_frma6"]
+[ext_resource type="Texture2D" uid="uid://7jolx46vd3kg" path="res://assets/plante/plantestate3-removebg-preview.png" id="3_vcy35"]
+[ext_resource type="Texture2D" uid="uid://bl8737228uqse" path="res://assets/plante/plante_state_4-removebg-preview.png" id="4_pu61g"]
+[ext_resource type="Texture2D" uid="uid://bapnahuq58nhv" path="res://assets/plante/plantestate_5-removebg-preview.png" id="5_h8e8m"]
+[ext_resource type="PackedScene" uid="uid://cpmutk6fae5c5" path="res://scenes/boutton_commencer.tscn" id="7_48f76"]
+[ext_resource type="PackedScene" uid="uid://eks32m670n4j" path="res://scenes/lampe.tscn" id="9_v5jxk"]
+[ext_resource type="PackedScene" uid="uid://cociwdpux7nkk" path="res://scenes/bol.tscn" id="10_mn423"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6blvl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uwhvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_frma6")
+}],
+"loop": false,
+"name": &"bg",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uwhvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1k0g2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vcy35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pu61g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h8e8m")
+}],
+"loop": false,
+"name": &"gg",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uwhvm")
+}],
+"loop": true,
+"name": &"i",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uwhvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1k0g2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vcy35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h8e8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pu61g")
+}],
+"loop": true,
+"name": &"mg",
+"speed": 0.5
+}]
+
+[node name="Plante" type="Node2D"]
+position = Vector2(4, 0)
+script = ExtResource("1_xec2y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(683, 491)
+scale = Vector2(1.97761, 1.5)
+sprite_frames = SubResource("SpriteFrames_6blvl")
+animation = &"mg"
+
+[node name="Label" type="Label" parent="AnimatedSprite2D"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -120.0
+offset_top = -189.0
+offset_right = 45.0
+offset_bottom = -93.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 31
+metadata/_edit_use_anchors_ = true
+
+[node name="Boutton Commencer" parent="." instance=ExtResource("7_48f76")]
+position = Vector2(-117, 575)
+
+[node name="Lampe" parent="." instance=ExtResource("9_v5jxk")]
+position = Vector2(-78, 73)
+scale = Vector2(1.39, 1.39)
+
+[node name="Bol" parent="." instance=ExtResource("10_mn423")]
+position = Vector2(336, -37)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="simulation_commencer" from="Boutton Commencer" to="." method="_on_boutton_commencer_simulation_commencer"]
+[connection signal="sigma" from="Lampe" to="." method="_on_lampe_sigma"]
+[connection signal="a_d" from="Bol" to="." method="_on_bol_a_d"]
+[connection signal="a_m" from="Bol" to="." method="_on_bol_a_m"]
+[connection signal="arroser" from="Bol" to="." method="_on_bol_arroser"]
+[connection signal="m_a" from="Bol" to="." method="_on_bol_m_a"]
+[connection signal="m_d" from="Bol" to="." method="_on_bol_m_d"]

@@ -1,0 +1,13 @@
+Timer
+Label
+Node2D
+Button
+Sprite2D
+AnimatedSprite2D
+Camera2D
+AnimationPlayer
+TextureRect
+TextureButton
+CollisionShape2D
+StaticBody2D
+Area2D

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxho0l5lyenc2"]
+
+[ext_resource type="Texture2D" uid="uid://bikql18inwmn3" path="res://assets/Capture d'écran 2025-02-24 134619.png" id="1_4rut7"]
+[ext_resource type="PackedScene" uid="uid://bywpo6ew1h5yj" path="res://scenes/node_2d.tscn" id="4_xt16p"]
+[ext_resource type="PackedScene" uid="uid://cpmutk6fae5c5" path="res://scenes/boutton_commencer.tscn" id="5_54k2l"]
+[ext_resource type="PackedScene" uid="uid://cwp27jx3nx1d0" path="res://scenes/plante.tscn" id="5_672rc"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(967.5, 546)
+scale = Vector2(1.01042, 1.01205)
+texture = ExtResource("1_4rut7")
+
+[node name="Boutton Commencer" parent="." instance=ExtResource("5_54k2l")]
+position = Vector2(3370, 2703)
+
+[node name="Boutton recomencer" parent="." instance=ExtResource("4_xt16p")]
+position = Vector2(170, 841)
+scale = Vector2(1.295, 1.295)
+
+[node name="Plante" parent="." instance=ExtResource("5_672rc")]
+position = Vector2(44, 238)
